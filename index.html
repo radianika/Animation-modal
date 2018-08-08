@@ -5,6 +5,29 @@
 	<title>Animation</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css" >
+	<style>
+		.move{
+			animation: moveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+		}
+	@keyframes moveUp {
+  0% {
+    transform:translateY(150px);
+  }
+  100% {
+    transform:translateY(0);
+  }
+		.movedown {
+          animation: moveDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        }
+		keyframes moveDown {
+  0% {
+    transform:translateY(0px);
+  }
+  100% {
+    transform:translateY(150px);
+  }
+}
+}</style>
  </head>
 <body>
 <section class="rotate-cube">
@@ -30,6 +53,8 @@
 <script>
 	function openModal() {
 	document.getElementById('modal').classList.remove("hidden");
+		document.getElementById('modal').classList.add("move");
+		
 }
 
 document.getElementById('button').onclick = openModal;
@@ -39,15 +64,15 @@ function closeModal() {
 };
 
 function closeGarold() {
-	document.getElementById('garold').classList.add("hidden");
+document.getElementById('garold').classList.add("hidden");
 
 }
 document.getElementById('close').onclick = closeModal;
 
 document.getElementById('pain').onclick = function () {
 	document.getElementById('garold').classList.remove("hidden");
-	setTimeout(closeModal, 2000);
-	setTimeout(closeGarold, 2000);
+	setTimeout(closeModal, 1000);
+	setTimeout(closeGarold, 1000);
 };
 
 	</script>
