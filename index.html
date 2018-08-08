@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="style.css" >
 	<style>
 		.move{
-			animation: moveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+			animation: moveUp .9s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 		}
 	@keyframes moveUp {
   0% {
@@ -41,7 +41,7 @@
 			<button class="close" type="button" id="close"><i class="fas fa-times"></i>
 
 </button>
-			<button class="ok" type="button" id="pain">Всё отлично, спасибо, никаких проблем, никаких притензий. Меня всё устраивает.</button>
+			<button class="ok" type="button" id="pain">Всё отлично, спасибо, никаких проблем, никаких претензий. Меня всё устраивает.</button>
 			<img src="img/garold.jpg" id="garold" class="hidden">
 
 		</div>
@@ -70,7 +70,7 @@ document.getElementById('garold').classList.add("hidden");
 document.getElementById('close').onclick = closeModal;
 
 document.getElementById('pain').onclick = function () {
-	document.getElementById('garold').classList.remove("hidden");
+document.getElementById('garold').classList.remove("hidden");
 	setTimeout(closeModal, 1000);
 	setTimeout(closeGarold, 1000);
 };
