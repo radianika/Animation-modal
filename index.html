@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Animation</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" >
+ </head>
+<body>
+<section class="rotate-cube">
+<div class="cube"></div>
+	</section>
+	<section class="modal-section">
+	<button class="main" type="button" id="button">Кнопка, которую все нажимают</button>
+	<div class="overlay hidden" id="modal">
+		<div class="modal">
+			<h2>Как дела? Как настроение?</h2>
+			<button class="close" type="button" id="close"><i class="fas fa-times"></i>
+
+</button>
+			<button class="ok" type="button" id="pain">Всё отлично, спасибо, никаких проблем, никаких притензий. Меня всё устраивает.</button>
+			<img src="img/garold.jpg" id="garold" class="hidden">
+
+		</div>
+	</div>
+	</section>
+<section class="mona-lisa">
+	<div class="shadow in"><img  class="start" src="img/item-1.jpg" alt="Мона ЛИза в Ковре"></div><div class="shadow second"><img class="end" src="img/item-3.jpg" alt="Мона лиза без ковра"></div>
+</section>
+<script>
+	function openModal() {
+	document.getElementById('modal').classList.remove("hidden");
+}
+
+document.getElementById('button').onclick = openModal;
+
+function closeModal() {
+	document.getElementById('modal').classList.add("hidden");
+};
+
+function closeGarold() {
+	document.getElementById('garold').classList.add("hidden");
+
+}
+document.getElementById('close').onclick = closeModal;
+
+document.getElementById('pain').onclick = function () {
+	document.getElementById('garold').classList.remove("hidden");
+	setTimeout(closeModal, 2000);
+	setTimeout(closeGarold, 2000);
+};
+
+	</script>
+</body>
+</html>

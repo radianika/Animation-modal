@@ -1,0 +1,250 @@
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ 	box-sizing: border-box;
+ }
+
+ body {
+ 	background: url('bg-image-alt.jpg')no-repeat;
+ 	background-size: cover;
+ }
+
+ .mona-lisa {
+ 	background-color: black;
+ 	padding: 50px;
+ 	display: flex;
+ 	justify-content: center;
+ 	padding-left: 450px;
+
+ }
+
+ .mona-lisa div {
+ 	display: inline-block;
+ }
+
+ .mona-lisa:hover .second {
+ 	animation-name: mona-end;
+ 	animation-duration: 10s;
+ }
+
+ .mona-lisa div.second {
+ 	opacity: 0;
+ }
+
+ @keyframes mona-end {
+ 	30% {
+ 		opacity: 0;
+ 		transform: translateX(-100%);
+ 	}
+ 	34% {
+ 		opacity: 1;
+ 		transform: translateX(-100%);
+ 	}
+ 	60% {
+ 		opacity: 1;
+ 		transform: translateX(-100%);
+ 	}
+ 	63% {
+ 		opacity: 0;
+ 		transform: translateX(-100%);
+ 	}
+ }
+
+ .shadow {
+ 	border-radius: 4px;
+ }
+
+ .shadow {
+ 	position: relative;
+ }
+
+ .shadow:after {
+ 	content: '';
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	right: 0;
+ 	bottom: 0;
+ 	border-radius: 4px;
+ 	background: linear-gradient(120deg, #00F260, #0575E6, #00F260);
+ 	background-size: 300% 300%;
+ 	clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+ }
+
+ .shadow.in:after {
+ 	animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+ }
+
+ @keyframes gradient-animation {
+ 	0% {
+ 		background-position: 15% 0%;
+ 	}
+ 	50% {
+ 		background-position: 85% 100%;
+ 	}
+ 	100% {
+ 		background-position: 15% 0%;
+ 	}
+ }
+
+ @keyframes frame-enter {
+ 	0% {
+ 		clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+ 	}
+ 	25% {
+ 		clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
+ 	}
+ 	50% {
+ 		clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
+ 	}
+ 	75% {
+ 		-webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
+ 	}
+ 	100% {
+ 		-webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
+ 	}
+ }
+
+
+
+
+
+
+
+
+
+
+ .rotate-cube {
+ 	background-color: currentColor;
+ 	padding: 50px 0 25px 0;
+ }
+
+ .cube {
+ 	width: 98px;
+ 	height: 98px;
+ 	border-radius: 25%;
+ 	background-color: white;
+ 	position: relative;
+ 	animation: rotatecube 15s;
+ 	animation-timing-function: ease-in;
+ 	animation-fill-mode: forwards;
+ }
+
+ @keyframes rotatecube {
+ 	from {
+ 		left: 0;
+ 	}
+ 	30% {
+ 		left: 25%;
+ 		transform: rotate(360deg);
+ 		background-color: chartreuse;
+ 	}
+ 	60% {
+ 		left: 0;
+ 		transform: rotate(-270deg);
+ 		background-color: coral;
+ 	}
+ 	to {
+ 		left: 200%;
+ 		transform: rotate(2000deg);
+ 		background-color: red;
+ 	}
+ }
+
+ .modal-section {
+ 	background: #233142;
+ 	display: flex;
+ 	justify-content: center;
+ 	padding: 50px;
+
+ }
+
+ .modal-section button {
+ 	heighT: 30px;
+ 	background-color: #F95959;
+ 	cursor: pointer;
+ 	font-size: 20px;
+ 	padding: 5px;
+ 	border: none;
+ 	border-radius: 5px;
+ 	color: floralwhite;
+
+ }
+
+ .overlay {
+ 	background: url("img/bg-image-alt.jpg") no-repeat;
+ 	background-size: cover;
+ 	opacity: 0.95;
+ 	position: fixed;
+ 	bottom: 0;
+ 	left: 0;
+ 	top: 0;
+ 	right: 0;
+ 	z-index: 1;
+ }
+
+ .hidden {
+ 	visibility: hidden;
+ }
+
+ .visible {
+ 	visibility: visible;
+
+ }
+
+ .modal {
+ 	position: fixed;
+ 	background: rgba(69, 93, 122, 0.95);
+ 	top: 35%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	height: auto;
+ 	min-height: 30%;
+ 	padding: 20px;
+ 	min-width: 30%;
+ 	border: 5px solid #233142;
+ 	border-radius: 10px;
+ 	text-align: center;
+ 	vertical-align: middle;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: space-between;
+ 	align-items: center;
+ }
+
+ button.close {
+ 	position: fixed;
+ 	right: 15px;
+ 	top: 5px;
+ 	background: none;
+ 	border: none;
+ 	width: 10px;
+ 	height: 10px;
+ 	font-size: 20px;
+ }
+
+ button.ok {
+ 	width: 50%;
+ 	min-width: 200px;
+ 	height: auto;
+ 	padding: 10px;
+ 	border: 1px solid #f95959;
+ 	border-radius: 5px;
+ 	color: floralwhite;
+ 	font-size: 14px;
+ 	line-height: 1.5;
+ }
+
+ button:focus,
+button:active{
+ 	outline: none;
+ 	color: #FACF5A;
+ }
+
+ .modal img {
+ 	position: fixed;
+ 	width: 110%;
+ 	height: auto;
+ 	top: -20px;
+ 	opacity: 1;
+ }
